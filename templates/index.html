@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Sales Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between">
+          <div class="flex space-x-7">
+            <div>
+              <a href="#" class="flex items-center py-4 px-2">
+                <span class="font-semibold text-gray-500 text-lg"
+                  >Car Sales System</span
+                >
+              </a>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <a
+              href="{{ url_for('auth.logout') }}"
+              class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-red-500 hover:text-white transition duration-300"
+              >Logout</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto mt-8">
+      <h1 class="text-3xl font-bold mb-6">
+        Welcome to your Car Sales Dashboard
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Inventory</h2>
+          <p class="text-gray-600">Manage your car inventory</p>
+          <a
+            href="#"
+            class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            >View Inventory</a
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Sales</h2>
+          <p class="text-gray-600">Track your car sales</p>
+          <a
+            href="#"
+            class="mt-4 inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+            >View Sales</a
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Clients</h2>
+          <p class="text-gray-600">Manage your client information</p>
+          <a
+            href="#"
+            class="mt-4 inline-block bg-purple-500 text-white py-2 px-4 rounded hover:bg-purple-600"
+            >View Clients</a
+          >
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-xl font-semibold mb-4">Add New Car</h2>
+          <p class="text-gray-600">Add a new car to your inventory</p>
+          <a
+            href="{{ url_for('car.add_car') }}"
+            class="mt-4 inline-block bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600"
+            >Add Car</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

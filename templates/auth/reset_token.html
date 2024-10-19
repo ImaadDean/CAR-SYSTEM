@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set New Password</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h2 class="text-2xl font-bold mb-6 text-center">Set New Password</h2>
+      <script id="flash-messages" type="application/json">
+        {{ get_flashed_messages() | tojson | safe }}
+      </script>
+      <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
+      <form method="POST" class="space-y-4">
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >New Password:</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <div>
+          <label
+            for="confirm_password"
+            class="block text-sm font-medium text-gray-700"
+            >Confirm New Password:</label
+          >
+          <input
+            type="password"
+            id="confirm_password"
+            name="confirm_password"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Set New Password
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

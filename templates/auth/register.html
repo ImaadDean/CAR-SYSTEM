@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h2 class="text-2xl font-bold mb-6 text-center">Register</h2>
+      <script id="flash-messages" type="application/json">
+        {{ get_flashed_messages() | tojson | safe }}
+      </script>
+      <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
+      <form method="POST" class="space-y-4">
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-700"
+            >Username:</label
+          >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >Password:</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700"
+            >Email:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <div>
+          <label
+            for="first_name"
+            class="block text-sm font-medium text-gray-700"
+            >First Name:</label
+          >
+          <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <div>
+          <label for="last_name" class="block text-sm font-medium text-gray-700"
+            >Last Name:</label
+          >
+          <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            required
+            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-gray-400 transition duration-150 ease-in-out"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Register
+        </button>
+      </form>
+      <p class="mt-4 text-center text-sm text-gray-600">
+        Already have an account?
+        <a
+          href="{{ url_for('auth.login') }}"
+          class="font-medium text-indigo-600 hover:text-indigo-500"
+          >Login here</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
